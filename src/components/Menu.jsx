@@ -5,7 +5,6 @@ import { faHouse, faGraduationCap, faCircleDollarToSlot, faRightFromBracket } fr
 function Menu() {
     const [activeButton, setActiveButton] = useState(null);
 
-    // Função para lidar com o clique nos botões
     const handleButtonClick = (buttonName) => {
         setActiveButton(buttonName);
     };
