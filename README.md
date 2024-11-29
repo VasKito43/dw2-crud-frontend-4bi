@@ -14,3 +14,10 @@ npm install --save @fortawesome/react-fontawesome @fortawesome/free-solid-svg-ic
 npm install --save @fortawesome/free-light-svg-icons
 npm install react-router-dom
 
+dashboard.render.com
+vercel.com
+
+
+LOGIN
+gmail: neymar@alunos.utfpr.edu.br
+senha:neymarcareco

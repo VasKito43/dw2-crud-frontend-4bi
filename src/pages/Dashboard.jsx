@@ -1,14 +1,14 @@
 import { StrictMode } from 'react'
 import Menu from '../components/Menu'
+import Home from '../components/Home'
 
 function Dashboard(){
     
     return (
-        <>
-        <StrictMode>
+        <div className="flex h-screen">
         <Menu/>
-        </StrictMode>,
-        </>
+        <Home/>
+        </div>
     )
 }
 export default Dashboard
