@@ -12,3 +12,5 @@ https://fontawesome.com/icons/categories/buildings
 
 npm install --save @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons @fortawesome/free-regular-svg-icons @fortawesome/free-brands-svg-icons
 npm install --save @fortawesome/free-light-svg-icons
+npm install react-router-dom
+

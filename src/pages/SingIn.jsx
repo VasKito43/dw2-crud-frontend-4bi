@@ -1,8 +1,26 @@
-import { Form } from "./components/form"
+import { Form } from "../components/form"
+import { NavLink } from "react-router-dom";
 
 
 function SingIn(){
     
+    const getEstilo = (props) => {
+   
+        let estilo =
+          "flex gap-3 text-zinc-50 px-3 py-4 hover:bg-slate-800 hover:text-slate-200 w-60";
+        let ativo = "border-r-4 border-solid border-zinc-50 "
+    
+        // let final
+        // if (props.isActive){
+        //     final = estilo + ativo
+        // } else {
+        //     final = estilo
+        // }
+        let final = props.isActive ? estilo + ativo : estilo
+    
+        return final;
+      };
+
     return (
         <div className="h-screen w-screen 
         bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
@@ -33,7 +51,13 @@ function SingIn(){
                 <div className="w-96 mt-8
                 flex justify-center">
                     <p className="text-gray-500">Forgot your password?</p>
-                    <button className="text-fuchsia-800 underline ml-1">Reset Password</button>
+                    {/* <button className="text-fuchsia-800 underline ml-1">Reset Password</button> */}
+                    <NavLink 
+                      to="dashboard" 
+                      className="text-fuchsia-800 underline ml-1"
+                    >
+                      Reset Password
+                    </NavLink>
                 </div>
                 </div>
             </Form>

@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
-import Menu from './components/Menu'
+import Menu from '../components/Menu'
 
-function DashBoard(){
+function Dashboard(){
     
     return (
         <>
@@ -11,4 +11,4 @@ function DashBoard(){
         </>
     )
 }
-export default DashBoard
+export default Dashboard
