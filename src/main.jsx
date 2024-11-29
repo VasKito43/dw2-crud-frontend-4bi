@@ -5,6 +5,7 @@ import './index.css'
 
 import SingIn from './pages/SingIn'
 import Dashboard from './pages/Dashboard'
+import ResetPassword from './pages/ResetPassword'
 
 // const rotas = createBrowserRouter(createRoutesFromElements(
 //   <Route path='/'element={<SingIn/>} > 
@@ -20,6 +21,7 @@ const rotas = createBrowserRouter(
     <Route path="/" element={<div><Outlet /></div>}> 
       <Route index element={<SingIn />} />
       <Route path="dashboard" element={<Dashboard />} />
+      <Route path="resetpassword" element={<ResetPassword/>} />
     </Route>
   )
 );

@@ -1,6 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
-import { Form } from "../components/Form"; // Importando o componente Form
+import { Form } from "../components/Form";
 
 function SignIn() {
   const [email, setEmail] = useState("");
@@ -11,12 +11,12 @@ function SignIn() {
   const submit = (e) => {
     e.preventDefault();
 
-    if (email === "neymar@alunos.utfpr.edu.br" && password === "neymarcareco") {
+    if (email === "neymar@gmail.com" && password === "neymarcareco") {
       navigate("/dashboard"); 
     } else {
       if (password !== "neymarcareco") {
         alert("Senha incorreta");
-      } else if (email !== "neymar@alunos.utfpr.edu.br") {
+      } else if (email !== "neymar@gmail.com") {
         alert("Email incorreto");
       }
     }
@@ -68,7 +68,7 @@ function SignIn() {
 
         <div className="w-full mt-8 flex justify-center">
           <p className="text-gray-500">Forgot your password?</p>
-          <NavLink to="" className="text-fuchsia-800 underline ml-1">
+          <NavLink to="/resetpassword" className="text-fuchsia-800 underline ml-1">
             Reset Password
           </NavLink>
         </div>
