@@ -5,21 +5,15 @@ import './index.css'
 
 import SingIn from './pages/SingIn'
 import Dashboard from './pages/Dashboard'
-
-// const rotas = createBrowserRouter(createRoutesFromElements(
-//   <Route path='/'element={<SingIn/>} > 
-//     <Route index element={<SingIn/>} />
-//     <Route path='dashboard' element={<Dashboard/>} />
-//     {/* <Route path='*' element={<Pagina404/>} /> */}
-//   </Route>
-  
-// ))
+import ResetPassword from './pages/ResetPassword'
+import { AppProvider } from './context/Appcontext';
 
 const rotas = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<div><Outlet /></div>}> 
+    <Route path="/" element={<Outlet />}> 
       <Route index element={<SingIn />} />
       <Route path="dashboard" element={<Dashboard />} />
+      <Route path="resetpassword" element={<ResetPassword/>} />
     </Route>
   )
 );
@@ -28,14 +22,11 @@ const rotas = createBrowserRouter(
 createRoot(document.getElementById('root')).render(
   <StrictMode>
 
-    <RouterProvider router={rotas} />
+    <AppProvider>
+
+      <RouterProvider router={rotas} />
+
+    </AppProvider>
 
   </StrictMode>,
 )
-
-
-// createRoot(document.getElementById('root')).render(
-//   <StrictMode>
-//     <SingIn/>
-//   </StrictMode>,
-// )

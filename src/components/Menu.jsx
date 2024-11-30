@@ -1,12 +1,17 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faGraduationCap, faCircleDollarToSlot, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { useAppContext } from '../context/Appcontext';
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Menu() {
     const [activeButton, setActiveButton] = useState(null);
+    const {ChangePageDashboard} = useAppContext();
+    const navigate = useNavigate(); 
 
     const handleButtonClick = (buttonName) => {
         setActiveButton(buttonName);
+        ChangePageDashboard(buttonName);
     };
 
     return (
@@ -61,15 +66,11 @@ function Menu() {
             </div>
 
             {/* Botão Logout */}
-            <button 
-                className={`flex items-center justify-center h-12 w-48 rounded-md 
-                    ${activeButton === 'logout' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500' : 'bg-fuchsia-200'} 
-                    hover:bg-fuchsia-300 mt-32 transition duration-300 ease-in-out`}
-                onClick={() => handleButtonClick('logout')}
-            >
+            <NavLink to="/" className="flex items-center justify-center h-12 w-48 rounded-md 
+                    hover:bg-fuchsia-300 mt-32 transition duration-300 ease-in-out">
                 <p className='mr-3'>Logout</p>
                 <FontAwesomeIcon icon={faRightFromBracket} />
-            </button>
+            </NavLink>
         </div>
     );
 }

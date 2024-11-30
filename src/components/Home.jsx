@@ -5,7 +5,7 @@ function Home(){
     
     return (
         <div className='w-5/6 h-screen'>
-            <div className="w-full h-100 flex justify-around mt-16">
+            <div className="w-full h-100 flex justify-around mt-12">
                 <div className="w-80 bg-blue-300 h-48 flex flex-col items-start justify-between rounded-lg">
                     <FontAwesomeIcon icon={faGraduationCap} className='h-14 ml-5 mt-7'/>
                     <p className='text-xl ml-5'>Students</p>
