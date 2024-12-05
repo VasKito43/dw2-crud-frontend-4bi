@@ -19,5 +19,5 @@ vercel.com
 
 
 LOGIN
-gmail: neymar@alunos.utfpr.edu.br
+gmail: neymar@gmail.com
 senha:neymarcareco

@@ -1,9 +1,7 @@
 import Menu from '../components/Menu'
-import Payment from '../components/Payment'
 import Home from '../components/Home'
 import { useAppContext } from '../context/Appcontext';
-import App from '../App'
-
+import App from '/';
 
 
 function Dashboard(){
@@ -19,10 +17,8 @@ function Dashboard(){
             case "students":
                 page = <App/>
                 break
-            case "payment":
-                page = <Payment/>
             }
-        return page
+            return page
     }
 
     return (
