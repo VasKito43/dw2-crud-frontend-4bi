@@ -13,19 +13,19 @@ function Home(){
                 </div>
                 <div className="w-80 bg-pink-300 h-48 flex flex-col items-start justify-between rounded-lg">
                     <FontAwesomeIcon icon={faBookmark} className='h-14 ml-5 mt-7'/>
-                    <p className='text-xl ml-5'>Students</p>
+                    <p className='text-xl ml-5'>Course</p>
                     <p className='text-right ml-52 mt-6 mb-10 text-4xl font-bold'>13</p>
                 </div>
                 <div className="w-80 bg-yellow-300 h-48 flex flex-col items-start justify-between rounded-lg">
                     <FontAwesomeIcon icon={faCircleDollarToSlot} className='h-14 ml-5 mt-7'/>
-                    <p className='text-xl ml-5'>Students</p>
+                    <p className='text-xl ml-5'>Payments</p>
                     <p className='text-right ml-24 mt-6 mb-10 text-4xl font-bold'>R$ 556,000</p>
                 </div>
                 <div className="w-80 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
                  h-48 flex flex-col items-start justify-between rounded-lg">
                     <FontAwesomeIcon icon={faUser} className='h-14 ml-5 mt-7'/>
-                    <p className='text-xl ml-5'>Students</p>
-                    <p className='text-right ml-24 mt-6 mb-10 text-4xl font-bold'>R$ 556,000</p>
+                    <p className='text-xl ml-5'>Users</p>
+                    <p className='text-right ml-24 mt-6 mb-10 text-4xl font-bold'>1</p>
                 </div>
 
             </div>

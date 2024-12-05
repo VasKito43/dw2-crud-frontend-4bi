@@ -1,8 +1,10 @@
 import Menu from '../components/Menu'
-import Payment from '../components/Payment'
+import Register from '../components/Register'
 import Home from '../components/Home'
+import Delete from '../components/Delete'
 import { useAppContext } from '../context/Appcontext';
-import App from '../App'
+import Students from '../components/Students'
+import Update from '../components/Update';
 
 
 
@@ -17,10 +19,17 @@ function Dashboard(){
                 page = <Home/>
                 break
             case "students":
-                page = <App/>
+                page = <Students/>
                 break
-            case "payment":
-                page = <Payment/>
+            case "register":
+                page = <Register/>
+                break
+            case "delete":
+                page = <Delete/>
+                break
+            case "update":
+                page = <Update/>
+                break
             }
         return page
     }

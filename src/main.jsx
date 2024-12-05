@@ -7,6 +7,8 @@ import SingIn from './pages/SingIn'
 import Dashboard from './pages/Dashboard'
 import ResetPassword from './pages/ResetPassword'
 import { AppProvider } from './context/Appcontext';
+import Register from './components/Register'
+import Delete from './components/Delete'
 
 const rotas = createBrowserRouter(
   createRoutesFromElements(
@@ -14,6 +16,9 @@ const rotas = createBrowserRouter(
       <Route index element={<SingIn />} />
       <Route path="dashboard" element={<Dashboard />} />
       <Route path="resetpassword" element={<ResetPassword/>} />
+      <Route path="register" element={<Register/>} />
+      <Route path="delete" element={<Delete/>} />
+      <Route path="delete" element={<Delete/>} />
     </Route>
   )
 );

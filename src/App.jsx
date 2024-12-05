@@ -1,11 +1,12 @@
+
 import React, { useEffect, useState } from "react";
 
 
 function App() {
-
   const [users, setUsers] = useState([]); // Estado para armazenar os usuários
   const [loading, setLoading] = useState(true); // Estado para gerenciar o carregamento
   const [error, setError] = useState(null); // Estado para erros
+
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -23,26 +24,48 @@ function App() {
       }
     };
 
+
     fetchUsers(); // Chama a função de busca
   }, []); // O array vazio faz com que a requisição ocorra apenas uma vez após a montagem
+
 
   if (loading) return <p className="text-center text-indigo-600">Carregando usuários...</p>; // Exibe o carregamento
   if (error) return <p className="text-center text-red-600">Erro: {error}</p>; // Exibe erro, se houver
 
 
   return (
-    <div className="max-w-7xl mx-auto p-6">
-      <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">Lista de Usuários</h1>
+    <div className="w-full mx-auto p-6">
+      <div className="flex w-full h-20 justify-between">
+        <h1 className="text-3xl font-bold text-left text-gray-800 mb-8">
+          Lista de Estudantes
+        </h1>
+        <button className="w-64 h-14 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-bold rounded-md">
+          ADD NEW STUDENT
+        </button>
+      </div>
+      <hr className="border-t-2 border-gray-300 my-4" />
+
+
       {users.length === 0 ? (
         <p className="text-center text-gray-500">Nenhum usuário encontrado.</p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {users.map(user => (
+        // Adicionando um container com overflow para scroll
+        <div
+          className="grid grid-cols-1 gap-6 overflow-y-auto scrollbar-thin"
+          style={{
+            maxHeight: "80vh", // Limita a altura a 80% da tela
+            scrollbarColor: "rgba(139, 92, 246, 1) rgba(243, 232, 255, 1)", // Combinação de roxo claro e lilás
+            scrollbarWidth: "thin", // Aplica o estilo fino
+          }}
+        >
+          {users.map((user) => (
             <div
               key={user.id}
-              className="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
+              className="w-full bg-white p-6 rounded-xl shadow-xl"
             >
-              <h2 className="text-2xl font-semibold text-indigo-700">{user.nome}</h2>
+              <h2 className="text-2xl font-semibold text-fuchsia-800">
+                {user.nome}
+              </h2>
               <p className="text-gray-600 mt-2">
                 <strong>Email:</strong> {user.email}
               </p>
@@ -55,7 +78,10 @@ function App() {
       )}
     </div>
   );
-};
+}
 
 
-export default App
+export default App;
+
+
+

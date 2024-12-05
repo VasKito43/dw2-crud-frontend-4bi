@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div className="max-w-7xl mx-auto p-6">
-      <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">Lista de Usuários</h1>
+      <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">Lista de Usuário</h1>
       {users.length === 0 ? (
         <p className="text-center text-gray-500">Nenhum usuário encontrado.</p>
       ) : (

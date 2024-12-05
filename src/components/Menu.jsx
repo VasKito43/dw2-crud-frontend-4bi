@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faGraduationCap, faCircleDollarToSlot, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faGraduationCap, faAddressCard, faRightFromBracket, faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useAppContext } from '../context/Appcontext';
 import { NavLink, useNavigate } from "react-router-dom";
 
@@ -58,11 +58,30 @@ function Menu() {
                     className={`flex items-center justify-center h-12 w-48 rounded-md 
                         ${activeButton === 'payment' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500' : 'bg-fuchsia-200'} 
                         hover:bg-fuchsia-300 mt-4 transition duration-300 ease-in-out`}
-                    onClick={() => handleButtonClick('payment')}
+                    onClick={() => handleButtonClick('register')}
                 >
-                    <FontAwesomeIcon icon={faCircleDollarToSlot} />
-                    <p className='ml-3'>Payment</p>
+                    <FontAwesomeIcon icon={faAddressCard} />
+                    <p className='ml-3'>Register</p>
                 </button>
+                <button 
+                    className={`flex items-center justify-center h-12 w-48 rounded-md 
+                        ${activeButton === 'delete' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500' : 'bg-fuchsia-200'} 
+                        hover:bg-fuchsia-300 mt-4 transition duration-300 ease-in-out`}
+                    onClick={() => handleButtonClick('delete')}
+                >
+                    <FontAwesomeIcon icon={faTrash} />
+                    <p className='ml-3'>Delete</p>
+                </button>
+                <button 
+                    className={`flex items-center justify-center h-12 w-48 rounded-md 
+                        ${activeButton === 'update' ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500' : 'bg-fuchsia-200'} 
+                        hover:bg-fuchsia-300 mt-4 transition duration-300 ease-in-out`}
+                    onClick={() => handleButtonClick('update')}
+                >
+                    <FontAwesomeIcon icon={faPen} />
+                    <p className='ml-3'>Update</p>
+                </button>
+                
             </div>
 
             {/* Botão Logout */}
