@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faGraduationCap, faCircleDollarToSlot, faRightFromBracket,faBookBookmark, faBookmark, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faGraduationCap, faCircleDollarToSlot, faBookmark, faUser } from '@fortawesome/free-solid-svg-icons';
 
 function Home(){
     

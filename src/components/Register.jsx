@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form } from "./Form";
 import $ from "jquery";
@@ -8,8 +8,8 @@ function Register() {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [celular, setCelular] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [loading] = useState(false);
+  const [error] = useState(null);
   const navigate = useNavigate();
 
 
@@ -41,13 +41,14 @@ function Register() {
       });
   
       if (response.ok) {
+        alert("student added successfully")
         navigate("/dashboard");
       } else {
-        alert("Erro ao cadastrar o usuário.");
+        alert("Error registering the user.");
       }
     } catch (error) {
       console.error(error);
-      alert("Erro ao cadastrar o usuário.");
+      alert("Error registering the user.");
     }
   };
   
@@ -62,7 +63,7 @@ function Register() {
         </div>
 
         <form onSubmit={submit}>
-          <p className="text-gray-600 font-bold text-base">Nome</p>
+          <p className="text-gray-600 font-bold text-base">Name</p>
           <input
             type="text"
             name="name"
@@ -84,7 +85,7 @@ function Register() {
             className="border border-gray-500 p-2 rounded-md h-11 w-full mt-2"
           />
 
-          <p className="text-gray-600 font-bold text-base mt-4">Celular</p>
+          <p className="text-gray-600 font-bold text-base mt-4">Phone Number</p>
           <input
             type="tel"
             name="telefone"

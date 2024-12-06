@@ -13,7 +13,7 @@ function Payment() {
     e.preventDefault();
   
     if (!id) {
-      alert("Por favor, insira um ID válido.");
+      alert("Please enter a valid ID.");
       return;
     }
   
@@ -26,15 +26,15 @@ function Payment() {
       });
   
       if (response.ok) {
-        alert("Usuário deletado com sucesso!");
+        alert("User deleted successfully!");
         navigate("/dashboard");
       } else {
         const errorData = await response.json();
-        setError(errorData.error || "Erro ao deletar o usuário.");
+        setError(errorData.error || "Error deleting user.");
       }
     } catch (err) {
       console.error(err);
-      setError("Erro de comunicação com o servidor.");
+      setError("Error communicating with the server.");
     } finally {
       setLoading(false);
     }
@@ -43,7 +43,7 @@ function Payment() {
   
 
   return (
-    <div className="h-screen w-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center">
+    <div className="h-screen w-5/6 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center">
       <Form>
         <div className="w-full flex items-center justify-center text-xl font-bold mt-6">DELETE STUDENT</div>
 

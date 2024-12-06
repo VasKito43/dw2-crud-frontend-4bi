@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form } from "./Form";
+import { useAppContext } from "../context/Appcontext";
 
 function Update() {
   const [id, setId] = useState("");
@@ -10,12 +11,22 @@ function Update() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const { SelectedUser } = useAppContext();
+
+  useEffect(() => {
+    if (SelectedUser) {
+      setId(SelectedUser.id);
+      setNome(SelectedUser.nome);
+      setEmail(SelectedUser.email);
+      setCelular(SelectedUser.celular);
+    }
+  }, [SelectedUser]);
 
   const submit = async (e) => {
     e.preventDefault();
 
     if (!id || !nome || !email || !celular) {
-      alert("Por favor, preencha todos os campos.");
+      alert("Please fill in all fields.");
       return;
     }
 
@@ -32,11 +43,11 @@ function Update() {
       });
 
       if (response.ok) {
-        alert("Usuário atualizado com sucesso!");
+        alert("User updated successfully!");
         navigate("/dashboard");
       } else {
         const errorData = await response.json();
-        setError(errorData.error || "Erro ao atualizar o usuário.");
+        setError(errorData.error || "Error communicating with the server.");
       }
     } catch (err) {
       console.error(err);
@@ -47,14 +58,14 @@ function Update() {
   };
 
   return (
-    <div className="h-screen w-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center">
+    <div className="h-screen w-5/6 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center">
       <Form>
         <div className="w-full flex items-center justify-center text-xl font-bold mt-6">
           UPDATE STUDENT
         </div>
 
         <div className="text-gray-500 mt-2">
-          Preencha todos os campos para atualizar o estudante
+        Fill in all fields to update the student
         </div>
 
         <form onSubmit={submit}>
@@ -66,10 +77,10 @@ function Update() {
             value={id}
             onChange={(e) => setId(e.target.value)}
             placeholder="Enter the ID"
-            className="border border-gray-500 p-2 rounded-md h-11 w-full mt-2"
+            className="border border-gray-500 p-2 rounded-md h-10 w-full mt-2"
           />
 
-          <p className="text-gray-600 font-bold text-base mt-4">Nome</p>
+          <p className="text-gray-600 font-bold text-base mt-2">Nome</p>
           <input
             type="text"
             name="nome"
@@ -77,10 +88,10 @@ function Update() {
             value={nome}
             onChange={(e) => setNome(e.target.value)}
             placeholder="Enter the name"
-            className="border border-gray-500 p-2 rounded-md h-11 w-full mt-2"
+            className="border border-gray-500 p-2 rounded-md h-10 w-full mt-2"
           />
 
-          <p className="text-gray-600 font-bold text-base mt-4">Email</p>
+          <p className="text-gray-600 font-bold text-base mt-2">Email</p>
           <input
             type="email"
             name="email"
@@ -88,10 +99,10 @@ function Update() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter the email"
-            className="border border-gray-500 p-2 rounded-md h-11 w-full mt-2"
+            className="border border-gray-500 p-2 rounded-md h-10 w-full mt-2"
           />
 
-          <p className="text-gray-600 font-bold text-base mt-4">Celular</p>
+          <p className="text-gray-600 font-bold text-base mt-2">Celular</p>
           <input
             type="text"
             name="celular"
@@ -99,7 +110,7 @@ function Update() {
             value={celular}
             onChange={(e) => setCelular(e.target.value)}
             placeholder="Enter the phone"
-            className="border border-gray-500 p-2 rounded-md h-11 w-full mt-2"
+            className="border border-gray-500 p-2 rounded-md h-10 w-full mt-2"
           />
 
           <button
