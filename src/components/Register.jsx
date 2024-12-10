@@ -32,7 +32,7 @@ function Register() {
   
     try {
 
-      const response = await fetch("https://crud-mail.onrender.com/usuarios/usuarios", {
+      const response = await fetch("https://crud-mail.onrender.com/usuarios", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
