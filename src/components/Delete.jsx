@@ -21,7 +21,7 @@ function Payment() {
     setError(null); 
   
     try {
-      const response = await fetch(`http://127.0.0.1:3000/usuarios/${id}`, {
+      const response = await fetch(`https://crud-mail.onrender.com/usuarios/${id}`, {
         method: "DELETE",
       });
   

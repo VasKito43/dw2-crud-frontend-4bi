@@ -16,7 +16,7 @@ function Students() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:3000/usuarios");
+        const response = await fetch("https://crud-mail.onrender.com/usuarios");
         if (!response.ok) {
           throw new Error("Error when searching for users");
         }
