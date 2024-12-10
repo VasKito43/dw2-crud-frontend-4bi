@@ -86,7 +86,7 @@ function Menu() {
 
             {/* Botão Logout */}
             <NavLink to="/" className="flex items-center justify-center h-12 w-48 rounded-md 
-                    hover:bg-fuchsia-300 mt-32 transition duration-300 ease-in-out">
+                    hover:bg-fuchsia-300 mt-16 transition duration-300 ease-in-out">
                 <p className='mr-3'>Logout</p>
                 <FontAwesomeIcon icon={faRightFromBracket} />
             </NavLink>
